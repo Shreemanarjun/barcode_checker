@@ -32,7 +32,6 @@ final futureInitializerPod =
   AppLocale deviceLocale = AppLocaleUtils.findDeviceLocale();
   final translations = await deviceLocale.build();
 
-  ///TODO: Replace box name with your unique name
   final appBox = await Hive.openBox(
     'AppBox',
     encryptionCipher: encryptionCipher,

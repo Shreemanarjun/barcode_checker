@@ -33,7 +33,6 @@ class _AppState extends ConsumerState<App> with GlobalHelper {
     final currentTheme = ref.watch(themecontrollerProvider);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      //TODO: change app name
       title: 'barcode_checker App',
       theme: Themes.theme,
       darkTheme: Themes.darkTheme,

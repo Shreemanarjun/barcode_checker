@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:barcode_checker/bootstrap.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_thermal_printer/flutter_thermal_printer.dart';
 import 'package:flutter_thermal_printer/utils/printer.dart';
@@ -15,7 +16,7 @@ class PrintNotifier extends AutoDisposeFamilyAsyncNotifier<bool?, File> {
   }
 
   Future<void> printImage({required Printer printer}) async {
-    print(printer);
+    talker.debug(printer);
     state = await AsyncValue.guard(
       () async {
         final bytes = await arg.readAsBytes();

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:barcode_checker/bootstrap.dart';
 import 'package:barcode_checker/features/dashbaord/controller/qr_image_generator.dart';
 import 'package:barcode_checker/features/dashbaord/view/qr_image_view.dart';
 import 'package:barcode_checker/shared/helper/global_helper.dart';
@@ -47,7 +48,7 @@ class _DashbaordPageState extends ConsumerState<DashbaordPage>
   void generateImage() async {
     if (_formKey.currentState?.validate() ?? false) {
       final fields = _formKey.currentState?.instantValue;
-      print(fields);
+      talker.debug(fields);
       final data = fields?["data"] as String;
       final barcode = fields?["barcode"] as BarcodeType;
       final height = fields?["height"] as double;
